@@ -34,12 +34,16 @@ class _HomeState extends State<Home> {
                 itemBuilder: (context, index) {
                   return Row(
                     children: [
-                      Image.asset(
-                        MyAssets.assetsImagesNetflix,
-                        height: 120,
-                        width: 180,
-                        fit: BoxFit.cover,
-                      ).cornerRadius(20),
+                      GestureDetector(
+                        onTap: () => AutoRouter.of(context)
+                            .push(const HomeDetailsRoute()),
+                        child: Image.asset(
+                          MyAssets.assetsImagesNetflix,
+                          height: 120,
+                          width: 180,
+                          fit: BoxFit.cover,
+                        ).cornerRadius(20),
+                      ),
                       10.w.widthBox,
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
